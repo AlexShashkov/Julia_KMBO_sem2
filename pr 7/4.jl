@@ -1,9 +1,9 @@
-function isPrime(number)
-    if (number % 2 == 0) return (number == 2)
+function gcd(x, y)
+    if x < y
+    x, y = y, x
     end
-    dummy::Int = 3
-    while dummy * dummy <= number && number % dummy != 0
-        dummy += 2
+    if y == 0
+        return x
     end
-    return (dummy * dummy > number)
+    return gcd(y, x%y)
 end
