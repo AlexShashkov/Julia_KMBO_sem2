@@ -1,7 +1,7 @@
-function getArgumentMax(f::Function, a::AbstractVector)
+function getArgumentMax(func::Function, a::AbstractVector)
     imax = firstindex(a)
     for i in firstindex(a)+1:lastindex(a)
-        if f(a[i])>f(a[imax])
+        if func(a[i])>func(a[imax])
             imax = i
         end
     end

@@ -7,7 +7,7 @@ function findallmax(A)
                 max_nums = [] 
             end
             if A[item] == max
-                append!(max_nums, i)
+                append!(max_nums, A[item])
             end
         end
         return max_nums
