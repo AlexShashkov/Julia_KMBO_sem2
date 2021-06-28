@@ -1,10 +1,16 @@
-function newton(func::Function, x; a=1e-8, derrirative=20)
-    x0 = a
-    ξ = func(x0)
-    result = ξ - func(ξ) / derrirative(ξ)
-    while abs(result-ξ) > math.pow(10,-3)
-        ξ = result
-        result = ξ - func(ξ) / derrirative(ξ)
+function newtonFunction(function::Function, a; εₓ=1e-8, εᵩ=1e-8, finaliteration=20)    
+    iter = 0
+    aᵪ = a 
+    value = function(aᵪ)
+    valueₙ = value - function(value)
+
+    while abs(valueₙ - value) > εₓ && abs(function(valueₙ)-function(value)) > εᵩ  
+        value = valueₙ 
+        valueₙ = value - function(value)
+        iter+=1
+        if(iter > finaliteration)
+            return nothing
+        end
     end
-    return result
+    return valueₙ
 end
