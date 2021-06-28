@@ -1,5 +1,3 @@
-# TODO: привести к nlogn
-
 function unique(arr)
     result = []
     for i in 1:length(arr)-1

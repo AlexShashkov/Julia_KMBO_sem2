@@ -2,7 +2,7 @@
 СОРТИРОВКА СТОЛБЦОВ МАТРИЦЫ
 """
 
-include("\3.jl")
+include("3.jl")
 
 function bubble!(array::Matrix)
     sized = size(array)

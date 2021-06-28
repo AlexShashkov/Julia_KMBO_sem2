@@ -1,5 +1,4 @@
 function bubblesortEnhanced!(a::AbstractArray)
-    a = [1,6,7,4,8,3]
     n=length(a)
     count = 1
     for _ in count:n-1

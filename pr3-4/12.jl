@@ -1,4 +1,4 @@
-function transposeEnchanched(array)
+function transposeEnchanchedUser(array)
     n = length(array)
     for i in (1:n)
         for j in (1:n)

@@ -1,18 +1,17 @@
-function SimpleCountingSort(A)
-    scope = length(A) + 1
-    C = zeros(Int64, scope)
-    for x in A
-        C[x] += 1
+function simpleCntrSort(α) 
+    arr = zeros(Int64, length(α) + 1)
+    for x in α
+        arr[x] += 1
     end
-    index = 1
+    indx = 1
     number = 1
-    while(number<scope)
-        while(C[number]>0)
-            C[number] -= 1
-            A[index] = number
-            index += 1
+    while(number < (length(α) + 1))
+        while(arr[number]>0)
+            arr[number] -= 1
+            α[indx] = number
+            indx += 1
         end
         number += 1
     end
-    return A
+    return α
 end

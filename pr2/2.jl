@@ -1,18 +1,18 @@
-function sort_by_count!(a, n)
-    counters = zeros(Int64, n+1)
-    for i in a
-        counters[a[i]] = counters[a[i]] + 1
+function sort_by_count!(α, numbers) 
+    counters = zeros(Int64, numbers+1)
+    for i in α
+        counters[α[i]] = counters[α[i]] + 1
     end
     index = 1
-    j = 0
-    for j in n
+    i = 0
+    for i in numbers
         k = 0
-        while(k<counters[j])
+        while(k<counters[i])
             k = k + 1
-            a[index] = counters[j]
-            counters[j] = counters[j] - 1
+            α[index] = counters[i]
+            counters[i] = counters[i] - 1
             index = index + 1
         end
     end
-    return a
+    return α
 end

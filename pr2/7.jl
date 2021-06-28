@@ -1,26 +1,17 @@
-function insertsort!(a)
-    for i in 2:length(a)
-        x = a[i]
-        j = i
-        while ((j > 1) && (a[j-1] > x))
-            a[j] = a[j-1]
-            j -= 1
+function insertsort!(α) 
+    for ξ in 2:length(α)
+        x = α[ξ]
+        i = ξ
+        while ((i > 1) && (α[i-1] > x))
+            α[i] = α[i-1]
+            i -= 1
         end
-        a[j] = x
+        α[i] = x
      end
-     return a
+     return α
 end
 
-function insertsort(a)
-    b = copy(a)
-    for i in 2:length(b)
-        x = b[i]
-        j = i
-        while ((j > 1) && (b[j-1] > x))
-            b[j] = b[j-1]
-            j -= 1
-        end
-        b[j] = x
-     end
-     return b
+function insertsort(α) 
+    β = copy(α)
+    return insertsort!(β)
 end

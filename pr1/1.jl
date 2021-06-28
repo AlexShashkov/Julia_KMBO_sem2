@@ -1,5 +1,3 @@
-include("tools.jl")
-
 function rev!(array)
     n = length(array)
     array = array[n:-1:1]
