@@ -1,16 +1,18 @@
 ENV["MPLBACKEND"]="tkagg" # graphics lib
 include("1.jl")
 
-function plotCreator(points, line)
+# Ω - точки на плоскости
+# Γ - прямой
+function plotCreator(Ω, Γ) 
     upₓ = []
     upⱼ = [] 
     downₓ = [] 
     downⱼ = []
 
-    k = (line[2][1] - line[1][1])/(line[2][2]-line[1][2])
-    b = line[1][2] - k*line[1][1]
+    k = (Γ[2][1] - Γ[1][1])/(Γ[2][2]-Γ[1][2])
+    b = Γ[1][2] - k*Γ[1][1]
 
-    for i in points
+    for i in Ω
         if i[2] >= (k*i[1] + b)
             push!(upₓ, i[1])
             push!(upⱼ, i[2])
@@ -23,8 +25,8 @@ function plotCreator(points, line)
     # using pyplot
     result = plot(Shape(
             [
-                (line[1][1], line[1][2]),
-                (line[2][1], line[2][2])
+                (Γ[1][1], Γ[1][2]),
+                (Γ[2][1], Γ[2][2])
             ]
         )
     )
