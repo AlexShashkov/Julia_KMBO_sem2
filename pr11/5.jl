@@ -17,7 +17,7 @@ function plotCreator(Ω, Γ)
             push!(upₓ, i[1])
             push!(upⱼ, i[2])
         else 
-            push!( downₓ, i[1])
+            push!(downₓ, i[1])
             push!(downⱼ, i[2])
         end
     end
